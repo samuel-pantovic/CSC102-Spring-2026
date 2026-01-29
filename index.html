@@ -1,33 +1,81 @@
-<!-- Samuel Pantovic for CSC 102  -->
-<!-- command + ? will generate the code comment in vs code for the type of code you are using
- this is an HTML comment - it is a multi-line comment -->
- <!-- HTML is HyperText Markup Language; the line below specifies that this is an HTML5 webpage -->
 <!DOCTYPE html>
-<!-- have an html opening tag after the doctype is specified -->
 <html lang="en">
-<!-- head section - this is primarly for browsers and serch engines -->
-<head> <!-- opening tag <Head> -->
-    <!-- this means that pretty much any character from any language may appear in this page -->
+
+<head>
     <meta charset="UTF-8">
-    <!-- this is the first step in having a mobile friendly design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- short, sweet. descriptive -->
     <title>CSC102 Home Page</title>
+
+    <!-- add a link to the css file -->
+    <link rel="stylesheet" href="main.css">
 </head>
-<!-- all of our page content goes between the opening and closing body tags -->
+
 <body>
-    <!-- header  is a semantic HTML tag 
-     header typically has logo and/or menue-->
     <header>
-        <!-- this h1 is heading1 the page title2 -->
         <h1>Welcome to my CSC102 landing page</h1>
     </header>
 
     <div>
-       <p>
-            <img id="memeImage" src="o1ix6f1ohh8f1.jpeg" width="300">
-       </p>  
+        <p>
+            <img id="memeImage" src="o1ix6f1ohh8f1.jpeg" width="300" alt="Meme image">
+        </p>
     </div>
+
+    <h2>There are 4 pillars of programming</h2>
+
+    <h3>Variables</h3>
+
+    <script>
+        // this is a single-line javascript comment
+
+        /*  
+            this is a multi-line javascript comment 
+        */
+
+        // a variable stores a piece of information 
+        // use descriptive variable names
+
+        let firstName = "Samuel";
+
+        // var and let are eqivalent for the purposes of this class - but use let cause its better
+        var lastName = "Pantovic";
+
+
+    </script>
+
+    <h3>Functions</h3>
+
+    <script>
+        // lets talk about functions - functions are way to organize chunks of code; functions also allow us to 
+        // write code 1 time and reuse it as many times as we need to 
+
+        // when creating a function in java script use the keyword function to let the interpreter know that
+        // you are creating a reusable chunk of code
+        // we create a descriptive name for what our function will do; most of the time our function names 
+        // should include a verb; start function names with a letter you can use numbers and _
+        // camelCase or snake_case for naming styles - use whichever one you want but stay consistent
+        // after the function name use perenthanses () weather or not you are passing values into functions
+        // the function code must be placed within curly braces {}
+        function addNumbers(){
+            // create 2 variables so we can add them together
+            let number1 = 5; // we are hard coding the value of 5 here 
+            let number2 = 8;
+
+            // create another variable to hold the sum 
+            let sum = number1 + number2;
+
+            // lets write out the sum to the consol
+            // to concatenate (add text together), you can use + or ,
+            console.log("the sum is:", sum);
+        }
+
+        // this line of code, calls the function sop we can test it 
+        addNumbers();
+    </script>
+
+    <h3>Decision Logic (if/else)</h3>
+    
+    <h3>Loops</h3>
+
 </body>
-<!-- the closing html tag should be at the very end of the file -->
-</html>  <!-- closing tag -->
+</html>
