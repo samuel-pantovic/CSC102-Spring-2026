@@ -37,6 +37,7 @@ function playDiceGame(){
             document.getElementById("divRoll1").textContent = "Dice roll 1: " + roll1;
             document.getElementById("divRoll2").textContent = "Dice roll 2: " + roll2;
             document.getElementById("divSum").textContent = "sum=" + rollSum;
+
         }
 
         // function will generate a random number between 1 and 6 
@@ -49,4 +50,53 @@ function playDiceGame(){
 
             // returning / passing back the random number
             return number;
+        }
+
+         // this function will validate the user input based on the requirements of the 
+        // client (assignment requirements)
+        function validate(){
+            // first name variable
+            let firstName = document.getElementById("txtFirstName").value; 
+
+            // show the first name in the console
+            console.log("firstName=" + firstName);
+
+             // last name variable
+            let lastName = document.getElementById("txtLastName").value; 
+
+            // show the last name in the console
+            console.log("lastName=" + lastName);
+
+            // zip code varriable
+            let zip = document.getElementById("txtZip").value;
+
+            // show the zip in the console
+            console.log("zip=" + zip);
+
+            // create a variable to hold the first name = " " + last name
+            let fullName = firstName + " " + lastName;
+
+            console.log("fullName=" + fullName);
+
+            // create a variable to hold the message we will show to the user
+            let message = "";
+
+            // we need to make sure the full name does not exceed 20 characters
+            if (fullName.length == 1 || fullName.length > 20){
+                message = "Please enter a name that is less than 20 characters.";
+            }
+            // the zip code can only have 5 characters
+            else if (zip.length != 5){
+                message = "Please enter a 5 digit zip code.";
+            }
+            // otherwise the user has entered everything correctly. and they get the 
+            //secret word
+            else{
+                message = "The secret word is validation!";
+            }
+
+            console.log("message=" + message);
+
+            // display the message on the associate div
+            document.getElementById("divMessage").textContent = message;
         }
