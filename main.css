@@ -32,7 +32,8 @@ line-height: 30px;
 }
 
 #memeImage{
-    Position: absolute;
+    /* this is necessary for your image to move around  */
+    position: absolute;
     left: 200px;
     top: 200px;
 }

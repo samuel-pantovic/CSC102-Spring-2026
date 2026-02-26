@@ -15,11 +15,18 @@
         <h1>Welcome to my CSC102 landing page</h1>
     </header>
 
+    <button id="btnStart" onclick="startImageMove();">Start Move Image</button>
+    <button id="btnStop" onclick="stopImageMove();" disabled>Stop Move Image</button>
+
     <div>
         <p>
-            <img id="memeImage" src="o1ix6f1ohh8f1.jpeg" width="300" alt="Meme image">
+            <img id="memeImage" src="o1ix6f1ohh8f1.jpeg" width="200">
         </p>
     </div> 
+
+    <script>
+       
+    </script>
 
     <h2>play my dice game</h2>
 
@@ -105,6 +112,27 @@
     </script>
     
     <h3>Loops</h3>
+
+    <script>
+        // loops allow us to run code over and over again
+
+        //think of a track that you run around mutiple times; mixing up cookie batter - keep mixing until the ingredients have combined
+
+        // for loops: we generally use for loops when we (us or the interpreter) know how many times the loop should run
+
+        // while loops: we generally use while loops when we dont know how many times the loop should run: think user input
+
+        // 
+
+        // the for loop should have 3 pieces of information
+        // 1st piece of information is a variable that keeps track of where we are in the loop
+        //2nd piece of information is the condistion (that while true) the loop will continue to run
+        // 3rd piece of information is changing the value of the counter variable; often we add 1:
+        // i = i + 1 is the same as i++
+        for (let i = 0; i < 5; i++)
+            console.log("i=", i);
+
+    </script>
 
 </body>
 </html>

@@ -100,3 +100,55 @@ function playDiceGame(){
             // display the message on the associate div
             document.getElementById("divMessage").textContent = message;
         }
+
+
+        
+        // the code to move the meme image around
+
+         // create a variable to track the current intervl id (returned from the set interval function
+        let intervalId = 0;
+
+        // create the function to move the image
+        function startImageMove(){
+            
+            // we are creating a variable that is  shortcut/nickname for our html image element
+            let memeImage = document.getElementById("memeImage");
+
+            // set interval allows us to repeadedly run code 
+            // function (){} is a anonymour function - a way to run a chunk of code 1 time as a functoin argument
+       
+            intervalId = setInterval(function(){
+                // get a random 
+                let topCord = getRandomPixels();
+                let leftCord = getRandomPixels();
+
+                memeImage.style.left = leftCord + "px";
+                memeImage.style.top = topCord + "px";
+
+            }, 1000); // 1000 miliseconds = 1 second
+
+             // enable the stop button
+             document.getElementById("btnStop").disabled = false;
+
+             // disable the stop button
+             document.getElementById("btnStart").disabled = true;
+        }
+
+        // create the function that stops the image from moving
+        function stopImageMove(){
+            // call a built in javascript function that stops the set interval from running
+            clearInterval(intervalId);
+
+             // disable the stop button
+             document.getElementById("btnStop").disabled = true;
+
+             // enable the stop button
+             document.getElementById("btnStart").disabled = false;
+
+        }
+
+        // build a function to get a random number
+        function getRandomPixels(){
+            // im picking 800 as the max number - adjust acordingly based on your screen size
+            return Math.floor(Math.random() * 800);
+        }
