@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+
+     <!-- add a link to the css file -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Palindrome Checker</h1>
+    </header>
+    <main>
+        <form onsubmit="checkPalin(event);">
+            <!-- label to explain to the user what info we need  -->
+            <label for="txtWord">Enter a word or phrase:</label>
+            <!-- text box for the user to be able to type in a word -->
+            <input type="text" id="txtWord">
+            <!-- the button so the user can test the word -->
+            <input type="submit" value="Check Word">
+        </form>
+
+        <!-- create a div to hold the results of the palindrome check -->
+        <div id="divMessage"></div>
+    </main>
+
+    <!-- TODO: move this java scrpt to an external .js file -->
+    <script>
+        // create the checkPalin function 
+        function checkPalin(event){
+            //prevent the form from submiting (so the page dosent refresh)
+            event.preventDefault();
+
+            // create a variable to store the word that the user entered
+            let wordToTest = document.getElementById("txtWord").value;
+
+            console.log("wordToTest=" + wordToTest);
+
+            // call the function to test it
+            // TODO: print out the resut to the user
+           let bPalin = isPalin(wordToTest);
+
+           // create a shortcut to the message div
+           let divMessage = document.getElementById("divMessage");
+
+           // create a message for the user based on the value of bPalin
+           if (bPalin){ // if(bPalin) is equivalent to if (bPalin == true) 
+                // show the user a message
+                divMessage.textContent = "The phrase is a palindrome!";
+           }
+           else{
+            divMessage.textContent = "The phrase is NOT a palindrome!";
+           }
+        }
+
+        // create a function to test to see if a string is the same backwords and forwards
+        function isPalin(strToTest){
+            // i want to convert the string to all lowercase so that it is a more fair comparison
+            strToTest = strToTest.toLowerCase();
+
+            console.log("strToTest=" + strToTest);
+
+            // create a new variable so we can keep the original string for testing
+            let strReverse = strToTest;
+
+            // covert the reverse string to an array, we will reverse the contents
+            //so tests would become test and then convert the array back to a string
+            strReverse = strReverse.split("").reverse().join("");
+
+             console.log("strReverse=" + strReverse);
+
+             // compare the original string with the reverse string
+             // if they match, this function will return true, otherwise it will return false
+             if (strReverse == strToTest){
+                return true;
+             }
+             /*
+             else{
+                return false 
+             }
+             */
+             // if we get to this line it must have been a palindrome so return false this is equivalent to the else above - include 1 or the other
+             else{
+                return false;
+             }
+        }
+    </script>
+</body>
+</html>
