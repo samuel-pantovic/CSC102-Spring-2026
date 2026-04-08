@@ -152,3 +152,51 @@ function playDiceGame(){
             // im picking 800 as the max number - adjust acordingly based on your screen size
             return Math.floor(Math.random() * 800);
         }
+
+         // this function will add an audio element to the page so we can listen to a sound clip
+        function addAudio(){
+            let divAudio = document.getElementById("divAudio");
+
+            // create an audio HTML element using JavaScript
+            let audioElement = document.createElement("audio");
+            // set the atributes of our new HTML elements
+            // add an id so we can work more easily with this element
+            audioElement.setAttribute("id", "myAudio");
+
+            // add the file name as the source
+            // if you are using the sound file provided in the assingment your code will look like this
+            // us-lab-background.mp3
+            audioElement.setAttribute("src", "us-lab-background.mp3");
+
+            // highly suggested - add controls
+            audioElement.setAttribute("controls", "controls");
+
+            // set the audio to 0 by default
+            audioElement.volume = .0;
+
+            // add our new HTMl audio element to the div that host it
+            divAudio.appendChild(audioElement);
+
+            // disallow the user from clicking the add audio button now that the audio has been added to the page
+            document.getElementById("btnAddAudio").hidden = true;
+
+            // make the play and pause buttons appear
+            document.getElementById("btnPlayAudio").hidden = false;
+            document.getElementById("btnPauseAudio").hidden = false;
+        }
+
+        // create the function so we can play the audio
+        function playAudio(){
+            // create a shortcut to the audio element we created in the add audio fuunctiom
+            let myAudio = document.getElementById("myAudio");
+            // lets play the sound
+            myAudio.play();
+        }
+
+        // create the function so that we can stop playing the audio - really pause it
+        function pauseAudio(){
+            // create a shortcut to the audio element we created in the add audio fuunctiom
+            let myAudio = document.getElementById("myAudio");
+            // lets pause the sound
+            myAudio.pause();
+        }
